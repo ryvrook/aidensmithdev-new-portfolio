@@ -20,6 +20,19 @@ export const metadata: Metadata = {
     template: `%s | ${site.name}`,
   },
   description: site.bio,
+  openGraph: {
+    type: 'website',
+    siteName: site.name,
+    title: `${site.name} | Full-stack developer`,
+    description: site.bio,
+    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Aiden Smith — full-stack developer portfolio' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `${site.name} | Full-stack developer`,
+    description: site.bio,
+    images: ['/opengraph-image'],
+  },
   icons: {
     icon: { url: '/favicon.ico', type: 'image/x-icon' },
     apple: '/apple-touch-icon.png',
