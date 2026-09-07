@@ -448,3 +448,6 @@ html { scroll-behavior: smooth; scroll-padding-top: 2rem; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+.brand-mark { display: block; }
+.brand-mark img { display: block; width: 100%; height: 100%; object-fit: contain; }

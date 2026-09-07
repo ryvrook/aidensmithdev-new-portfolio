@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { site } from '@/data/site';
+import { SeasonalBrand } from '@/components/SeasonalBrand';
 import { getProject } from '@/data/projects';
 import { statusColor } from '@/lib/format';
 
@@ -27,7 +28,7 @@ export default function HomePage() {
             <a href={site.github} target="_blank" rel="noreferrer">GitHub</a>
           </div>
         </div>
-        {site.avatar && <Image src={site.avatar} alt="Aiden Smith’s profile avatar" width={160} height={160} priority className="portrait" />}
+        <SeasonalBrand />
       </section>
 
       <section id="work" aria-labelledby="work-title">
