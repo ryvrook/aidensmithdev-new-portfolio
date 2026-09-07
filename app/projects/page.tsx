@@ -31,9 +31,7 @@ export default function ProjectsPage() {
             <Link
               key={p.slug}
               href={`/projects/${p.slug}`}
-              className={`row-hover relative block px-1 py-[15px] no-underline hover:no-underline ${
-                p.image ? 'pr-[84px]' : ''
-              }`}
+              className={`project-row row-hover relative block px-1 py-[15px] no-underline hover:no-underline ${p.image ? 'project-row-with-image sm:pr-[84px]' : ''}`}
               style={{ borderBottom: '1px solid var(--line-soft)', color: 'inherit' }}
             >
               {p.image && (
@@ -42,11 +40,11 @@ export default function ProjectsPage() {
                   alt=""
                   width={64}
                   height={64}
-                  className="absolute top-[15px] right-1 size-16 object-contain"
+                  className="project-row-image absolute top-[15px] right-1 size-16 object-contain"
                 />
               )}
-              <div className="flex flex-wrap items-baseline gap-3 text-xs">
-                <span className="text-base font-semibold" style={{ color: 'var(--text-bright)' }}>
+              <div className="project-row-meta flex flex-wrap items-baseline gap-3 text-xs">
+                <span className="project-row-name text-base font-semibold" style={{ color: 'var(--text-bright)' }}>
                   {p.name}
                 </span>
                 {p.pinned && (
@@ -57,7 +55,7 @@ export default function ProjectsPage() {
                 <span style={{ color: statusColor[p.status] }}>{p.status}</span>
                 <span style={{ color: 'var(--text-dim)' }}>{p.lang}</span>
                 <span style={{ color: 'var(--text-dim)' }}>{p.updated}</span>
-                <span className="ml-auto" style={{ color: 'var(--text-dim)' }}>
+                <span className="project-complexity ml-auto" style={{ color: 'var(--text-dim)' }}>
                   complexity <span style={{ color: 'var(--amber)' }}>{bars.on}</span>
                   <span style={{ color: 'var(--bar-off)' }}>{bars.off}</span>
                 </span>

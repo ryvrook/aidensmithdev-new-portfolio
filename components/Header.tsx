@@ -20,22 +20,23 @@ function isActive(pathname: string, href: string): boolean {
 export function Header() {
   const pathname = usePathname();
   return (
-    <header className="flex flex-col gap-[14px]">
-      <div className="flex items-baseline gap-3 flex-wrap">
+    <header className="site-header flex flex-col gap-[14px]">
+      <div className="header-identity flex items-baseline gap-3 flex-wrap">
         <Link
           href="/"
-          className="text-lg font-semibold"
+          className="header-name text-lg font-semibold"
           style={{ color: 'var(--text-bright)' }}
         >
           {site.name}
         </Link>
-        <span style={{ color: 'var(--text-dim)' }}>{site.handle}</span>
-        <span className="ml-auto text-sm" style={{ color: 'var(--text-dim)' }}>
+        <span className="header-handle" style={{ color: 'var(--text-dim)' }}>{site.handle}</span>
+        <span className="header-role ml-auto text-sm" style={{ color: 'var(--text-dim)' }}>
           {site.role}
         </span>
       </div>
       <nav
-        className="flex flex-wrap gap-[2px] py-[7px] text-sm tracking-[.06em]"
+        aria-label="Main navigation"
+        className="site-nav flex flex-wrap gap-[2px] py-[7px] text-sm tracking-[.06em]"
         style={{
           borderTop: '1px solid var(--line)',
           borderBottom: '1px solid var(--line)',

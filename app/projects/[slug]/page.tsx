@@ -26,12 +26,12 @@ export default async function ProjectPage({ params }: Props) {
 
   return (
     <div className="fade-up flex flex-col gap-[22px]">
-      <div className="text-xs tracking-[.06em]" style={{ color: 'var(--text-dim)' }}>
+      <div className="breadcrumb text-xs tracking-[.06em]" style={{ color: 'var(--text-dim)' }}>
         <Link href="/projects">projects</Link> / {project.name}
       </div>
 
-      <div className="flex items-start justify-between gap-5">
-        <div>
+      <div className="project-heading flex items-start justify-between gap-5">
+        <div className="min-w-0">
           <div className="flex flex-wrap items-baseline gap-3">
             <h1 className="m-0 text-[19px] font-semibold" style={{ color: 'var(--text-bright)' }}>
               {project.name}
@@ -40,7 +40,7 @@ export default async function ProjectPage({ params }: Props) {
               ● {project.status}
             </span>
           </div>
-          <div className="mt-2 flex flex-wrap gap-5 text-xs" style={{ color: 'var(--text-dim)' }}>
+          <div className="project-facts mt-2 flex flex-wrap gap-5 text-xs" style={{ color: 'var(--text-dim)' }}>
             <span>
               lang: <span style={{ color: 'var(--text)' }}>{project.lang}</span>
             </span>
@@ -61,7 +61,7 @@ export default async function ProjectPage({ params }: Props) {
             width={96}
             height={96}
             priority
-            className="size-20 shrink-0 object-contain sm:size-24"
+            className="size-14 shrink-0 object-contain sm:size-24"
           />
         )}
       </div>
@@ -81,11 +81,11 @@ export default async function ProjectPage({ params }: Props) {
       )}
 
       <div
-        className="flex flex-col gap-[6px] px-[14px] py-3 text-xs"
+        className="project-resources flex flex-col gap-[6px] px-[14px] py-3 text-xs"
         style={{ background: 'var(--panel-deep)', border: '1px solid var(--line)' }}
       >
         {project.url && (
-          <div className="grid grid-cols-[64px_1fr] gap-3">
+          <div className="grid grid-cols-[64px_minmax(0,1fr)] gap-3">
             <span className="text-xs" style={{ color: 'var(--text-dim)' }}>
               url
             </span>
@@ -95,7 +95,7 @@ export default async function ProjectPage({ params }: Props) {
           </div>
         )}
         {project.repo ? (
-          <div className="grid grid-cols-[64px_1fr] gap-3">
+          <div className="grid grid-cols-[64px_minmax(0,1fr)] gap-3">
             <span className="text-xs" style={{ color: 'var(--text-dim)' }}>
               clone
             </span>
@@ -104,7 +104,7 @@ export default async function ProjectPage({ params }: Props) {
             </a>
           </div>
         ) : (
-          <div className="grid grid-cols-[64px_1fr] gap-3">
+          <div className="grid grid-cols-[64px_minmax(0,1fr)] gap-3">
             <span className="text-xs" style={{ color: 'var(--text-dim)' }}>
               source
             </span>
@@ -112,7 +112,7 @@ export default async function ProjectPage({ params }: Props) {
           </div>
         )}
         {project.mirror && (
-          <div className="grid grid-cols-[64px_1fr] gap-3">
+          <div className="grid grid-cols-[64px_minmax(0,1fr)] gap-3">
             <span className="text-xs" style={{ color: 'var(--text-dim)' }}>
               mirror
             </span>
@@ -127,7 +127,7 @@ export default async function ProjectPage({ params }: Props) {
             </a>
           </div>
         )}
-        <div className="grid grid-cols-[64px_1fr] gap-3">
+        <div className="grid grid-cols-[64px_minmax(0,1fr)] gap-3">
           <span className="text-xs" style={{ color: 'var(--text-dim)' }}>
             meta
           </span>
@@ -162,6 +162,8 @@ export default async function ProjectPage({ params }: Props) {
           </summary>
           <pre
             className="term"
+            tabIndex={0}
+            aria-label="Architecture diagram; scroll horizontally to explore"
             style={{ fontSize: '10.5px', lineHeight: 1.45, color: 'var(--text-dim)' }}
           >
             {project.diagram}
@@ -174,7 +176,7 @@ export default async function ProjectPage({ params }: Props) {
         {project.changelog.map((entry) => (
           <div
             key={`${entry.date}-${entry.message}`}
-            className="grid grid-cols-[92px_1fr] gap-[14px] py-[7px] text-xs"
+            className="changelog-row grid grid-cols-[92px_minmax(0,1fr)] gap-[14px] py-[7px] text-xs"
             style={{ borderBottom: '1px solid var(--line-faint)' }}
           >
             <span className="text-xs" style={{ color: 'var(--text-dim)' }}>
@@ -185,7 +187,7 @@ export default async function ProjectPage({ params }: Props) {
         ))}
       </div>
 
-      <div className="flex flex-wrap gap-[18px] text-sm">
+      <div className="page-actions flex flex-wrap gap-[18px] text-sm">
         {project.repo && (
           <>
             <a href={project.repo} target="_blank" rel="noreferrer">

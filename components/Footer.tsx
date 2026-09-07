@@ -13,13 +13,13 @@ export function Footer() {
   const pathname = usePathname();
   return (
     <footer
-      className="flex gap-[14px] pt-[14px] text-xs"
+      className="site-footer flex gap-[14px] pt-[14px] text-xs"
       style={{ color: 'var(--text-faint)', borderTop: '1px solid var(--line-soft)' }}
     >
       <span>
         {site.name} © {site.copyrightYears}
       </span>
-      <span className="ml-auto">{pageRef(pathname)}</span>
+      <span className="footer-path ml-auto">{pageRef(pathname)}</span>
     </footer>
   );
 }

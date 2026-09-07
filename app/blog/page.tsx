@@ -15,7 +15,7 @@ export default function BlogPage() {
           WRITING
         </div>
         <div className="text-xs">
-          <a href="/feed.xml" className="quiet-link">
+          <a href="/feed.xml" className="quiet-link feed-link">
             rss
           </a>
         </div>
@@ -25,13 +25,13 @@ export default function BlogPage() {
           <Link
             key={post.slug}
             href={`/blog/${post.slug}`}
-            className="row-hover grid grid-cols-[92px_1fr_52px] items-baseline gap-[14px] px-1 py-[14px] no-underline hover:no-underline"
+            className="writing-row row-hover grid grid-cols-[92px_1fr_52px] items-baseline gap-[14px] px-1 py-[14px] no-underline hover:no-underline"
             style={{ borderBottom: '1px solid var(--line-soft)', color: 'inherit' }}
           >
             <span className="text-xs" style={{ color: 'var(--text-dim)' }}>
               {post.date}
             </span>
-            <span>
+            <span className="writing-summary">
               <span className="font-medium" style={{ color: '#c6d0d6' }}>
                 {post.title}
               </span>
@@ -44,7 +44,7 @@ export default function BlogPage() {
                 {formatTags(post.tags)}
               </span>
             </span>
-            <span className="text-right text-xs" style={{ color: 'var(--text-dim)' }}>
+            <span className="writing-duration text-right text-xs" style={{ color: 'var(--text-dim)' }}>
               {post.minutes} min
             </span>
           </Link>
