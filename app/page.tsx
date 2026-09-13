@@ -26,6 +26,7 @@ export default function HomePage() {
             <Link href="#work" className="primary-link">Explore my work <span aria-hidden="true">↓</span></Link>
             <a href={site.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
             <a href={site.github} target="_blank" rel="noreferrer">GitHub</a>
+            <a href={site.resume} target="_blank" rel="noreferrer">Resume</a>
           </div>
         </div>
         <SeasonalBrand />

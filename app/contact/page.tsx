@@ -13,6 +13,7 @@ export default function ContactPage() {
         {site.email && <a href={`mailto:${site.email}`}><span>Email</span><span>{site.email} ↗</span></a>}
         <a href={site.linkedin} target="_blank" rel="noreferrer" className="no-arrow"><span>LinkedIn</span><span>Aiden Smith ↗</span></a>
         <a href={site.github} target="_blank" rel="noreferrer" className="no-arrow contact-github"><span>GitHub</span><span>@ryvrook ↗</span></a>
+        <a href={site.resume} target="_blank" rel="noreferrer" className="no-arrow"><span>Resume</span><span>PDF ↗</span></a>
       </div>
       <p className="contact-secondary">For the wider collection of experiments and development notes, visit <a href="https://ryvrook.com" target="_blank" rel="noreferrer">ryvrook.com</a>.</p>
     </div>

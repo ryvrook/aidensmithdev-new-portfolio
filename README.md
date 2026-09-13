@@ -18,6 +18,7 @@ bun run dev
 - `data/projects.ts`: full project catalog, development statuses, writeups, and changelogs.
 - `content/posts/`: existing technical writing in Markdown. The unpublished example is retained in `docs/post-template.md`.
 - `public/projects/`: existing project logos and screenshots.
+- `public/Aiden-Smith-Resume.pdf`: downloadable resume, linked from the home intro and contact page via `site.resume`.
 
 Routes: `/`, `/projects`, `/projects/[slug]`, `/blog`, `/blog/[slug]`, `/contact`, `/feed.xml`, and `/sitemap.xml`.
 

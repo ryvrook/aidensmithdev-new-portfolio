@@ -13,6 +13,7 @@ export const site = {
   email: '' as string,
   github: 'https://github.com/ryvrook',
   linkedin: 'https://www.linkedin.com/in/aidensmithdev/',
+  resume: '/Aiden-Smith-Resume.pdf',
   socials: [
     { label: 'github', href: 'https://github.com/ryvrook' },
     { label: 'linkedin', href: 'https://www.linkedin.com/in/aidensmithdev/' },
