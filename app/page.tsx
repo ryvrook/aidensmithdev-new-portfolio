@@ -10,7 +10,7 @@ const selections = [
   { slug: 'enterprise-vectordns', focus: 'Infrastructure', description: 'Domain monitoring built to distinguish real DNS, certificate, and WHOIS changes from noise.', detail: 'Go services, monitoring history, and account workflows.' },
   { slug: 'corvid-platform', focus: 'Connected products', description: 'One operator workspace connecting business discovery, website audits, leads, and site production.', detail: 'Shared workflows across independently running products.' },
   { slug: 'flock-directories', focus: 'Publishing systems', description: 'A shared template for independent local business directories, each built from validated, sourced data.', detail: 'One data model, reviewed listings, and a static site per domain.' },
-  { slug: 'presentelle', focus: 'Current experiment', description: 'A visual thinking workspace connecting physical boards with session history, corrected records, and reviewed drafts.', detail: 'TypeScript and Swift. Provider and physical-device validation are still in progress.' },
+  { slug: 'back2paper', focus: 'Learning + print', description: 'A documentation-grounded learning site where lessons move from guided reading to paper exercises, online review, and printable books.', detail: 'Go and TypeScript. 233 reviewed lessons, three level books, revision-pinned QR codes.' },
 ];
 
 export default function HomePage() {
