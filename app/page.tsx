@@ -6,7 +6,8 @@ import { getProject } from '@/data/projects';
 import { statusColor } from '@/lib/format';
 
 const selections = [
-  { slug: 'roadrunner', focus: 'Web + mobile', description: 'A motorcycle ownership platform bringing maintenance, parts, guides, and a rider community into one place.', detail: 'Ownership records, community tools, and an iOS app in development.' },
+  { slug: 'roadrunner', focus: 'Web + mobile', description: 'A motorcycle ownership platform bringing maintenance, parts, guides, and a rider community into one place.', detail: 'Ownership records, community tools, and an iOS app on the App Store.' },
+  { slug: 'hytale-mods', focus: 'Game mods', description: 'Twelve Hytale server mods built on a shared event library, with a wiki that documents every command and setting.', detail: 'Java. Eleven on CurseForge with 445 downloads, docs at mods.ryvrook.com.' },
   { slug: 'enterprise-vectordns', focus: 'Infrastructure', description: 'Domain monitoring built to distinguish real DNS, certificate, and WHOIS changes from noise.', detail: 'Go services, monitoring history, and account workflows.' },
   { slug: 'corvid-platform', focus: 'Connected products', description: 'One operator workspace connecting business discovery, website audits, leads, and site production.', detail: 'Shared workflows across independently running products.' },
   { slug: 'flock-directories', focus: 'Publishing systems', description: 'A shared template for independent local business directories, each built from validated, sourced data.', detail: 'One data model, reviewed listings, and a static site per domain.' },
@@ -21,7 +22,7 @@ export default function HomePage() {
           <p className="eyebrow">Full-stack developer</p>
           <h1 id="intro-title">Hi, I’m Aiden<span className="accent-dot">.</span></h1>
           <p className="intro-copy">I build websites and apps, usually because I want to use them myself.</p>
-          <p className="intro-detail">Today that means tools for motorcycle owners, domain monitoring, and the systems that help small businesses get online.</p>
+          <p className="intro-detail">Today that means tools for motorcycle owners, domain monitoring, Hytale server mods, and the systems that help small businesses get online.</p>
           <div className="intro-links">
             <Link href="#work" className="primary-link">Explore my work <span aria-hidden="true">↓</span></Link>
             <a href={site.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
@@ -63,7 +64,7 @@ export default function HomePage() {
       </section>
 
       <section aria-labelledby="now-title">
-        <div className="section-heading"><h2 id="now-title">On my desk</h2><span className="section-note">September 2026</span></div>
+        <div className="section-heading"><h2 id="now-title">On my desk</h2><span className="section-note">October 2026</span></div>
         <ul className="now-list">{site.now.map(item => <li key={item}>{item}</li>)}</ul>
       </section>
 
