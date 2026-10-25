@@ -20,6 +20,8 @@ const repos = {
     'ryvrook/keepworkbenchtier',
     'ryvrook/hytale-polyglot',
     'ryvrook/workbenchchestlink',
+    'ryvrook/schematic-blueprints',
+    'ryvrook/Hytale-ItemForge',
     'ryvrook/ryvrook-wiki',
   ],
   'eternal-love': 'ryvrook/eternallove',

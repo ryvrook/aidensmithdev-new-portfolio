@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" shape-rendering="crispEdges" role="img" aria-label="ItemForge icon">
+  <rect x="0" y="0" width="128" height="128" rx="18" fill="#2a2320"/>
+  <rect x="6" y="6" width="116" height="116" rx="14" fill="#3b302a"/>
+  <!-- forge glow -->
+  <rect x="20" y="92" width="88" height="14" fill="#8a3d1f"/>
+  <rect x="26" y="98" width="76" height="8" fill="#d8692a"/>
+  <rect x="34" y="102" width="60" height="4" fill="#f2a34a"/>
+  <!-- anvil -->
+  <rect x="30" y="40" width="68" height="12" fill="#9aa3ad"/>
+  <rect x="24" y="44" width="10" height="8" fill="#9aa3ad"/>
+  <rect x="98" y="40" width="10" height="6" fill="#9aa3ad"/>
+  <rect x="30" y="52" width="68" height="6" fill="#6b7580"/>
+  <rect x="48" y="58" width="32" height="18" fill="#6b7580"/>
+  <rect x="40" y="76" width="48" height="10" fill="#9aa3ad"/>
+  <rect x="40" y="86" width="48" height="6" fill="#6b7580"/>
+  <!-- hammer -->
+  <rect x="74" y="12" width="26" height="14" fill="#c9ccd1"/>
+  <rect x="74" y="26" width="26" height="4" fill="#8e949b"/>
+  <rect x="84" y="30" width="6" height="12" fill="#a0642f"/>
+  <!-- sparks -->
+  <rect x="38" y="30" width="4" height="4" fill="#ffd27a"/>
+  <rect x="58" y="24" width="4" height="4" fill="#ffd27a"/>
+  <rect x="46" y="18" width="4" height="4" fill="#f2a34a"/>
+  <rect x="108" y="60" width="4" height="4" fill="#ffd27a"/>
+</svg>

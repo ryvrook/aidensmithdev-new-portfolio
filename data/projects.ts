@@ -6,7 +6,7 @@ export type Mod = {
   version: string;
   group: 'Gameplay' | 'Server tools' | 'Libraries';
   summary: string;
-  wiki: string;
+  wiki?: string;
   curseforge?: string;
   downloads?: number;
   repo?: string;
@@ -57,7 +57,7 @@ export const projects: Project[] = [
     status: 'ACTIVE',
     tags: ['AI Assist'],
     lang: 'Java',
-    updated: '2026-10-19',
+    updated: '2026-10-25',
     complexity: 5,
     pinned: true,
     pinnedOrder: 3,
@@ -69,29 +69,30 @@ export const projects: Project[] = [
     image: '/projects/hytale-logo.png',
     banner: '/projects/hytale-mods-banner.webp',
     summary:
-      'Twelve server mods for Hytale and the wiki that documents them. Eleven are on CurseForge with 445 downloads, covering achievements, statistics, a live web map, an economy, factions, Discord, and an admin API.',
+      'Fifteen server mods for Hytale and the wiki that documents them. Twelve are on CurseForge with 694 downloads, covering achievements, statistics, a live web map, an economy, factions, survival building, Discord, and an admin API.',
     body: [
-      'I started writing Hytale server plugins on 2026-10-13 and it grew into a suite of twelve mods. Each one is a server-side Java plugin built with Gradle, with no client mod to install, and runs on Hytale server 0.7.2. Eleven are published on CurseForge, where they had 445 downloads as of 2026-10-19.',
-      'TrackerAPI sits underneath most of the suite. It hooks the engine once and publishes 62 typed event kinds, per-player counters, and an hourly journal, so Feats, Chronicle Stats, Atlas, and four other mods read the same stream instead of each patching the server. The mods also detect each other while running and only add shared features while a sibling is loaded, such as Coinage balances behind Dominion faction banks, Dominion faction threads in SocialBridge, and RestAPI route groups for eight other mods.',
-      'The largest mods are Dominion Factions, with 209 commands and 259 settings, and Coinage, with 157 commands over one ledger for payments, banks, shops, an auction house, and trading. Atlas serves a live web map straight from the server, with terrain, markers, a timeline of every world, and 3D views. Across the suite there are 576 commands and 1,055 settings, and every one of them is documented.',
-      'The documentation lives at mods.ryvrook.com, an Astro Starlight site written from each repository\'s source rather than its README. Every mod has pages for commands, permissions, settings, APIs, integrations, and its changelog. A separate server section explains the mods to players on my own server, including guides for five mods by other authors.',
-      'Polyglot, a chat translator, is documented and waiting on its first client test before it goes to CurseForge. Schematic Blueprints is in development. It saves builds or loads any prefab as a hologram, then lets a player in Adventure mode build it from their own inventory with a printer, easy place, a verifier, and a material list.',
+      'I started writing Hytale server plugins on 2026-10-13 and it grew into a suite of fifteen mods. Each one is a server-side Java plugin built with Gradle, with no client mod to install, and runs on Hytale server 0.7.2. Twelve are published on CurseForge, where they had 694 downloads as of 2026-10-25.',
+      'TrackerAPI sits underneath most of the suite. It hooks the engine once and publishes 77 typed event kinds, per-player counters, and an hourly journal, so Feats, Chronicle Stats, Atlas, and four other mods read the same stream instead of each patching the server. Since 1.2.0 it also binds to fourteen mods by other authors, from RPG Leveling to Angler\'s Almanac, so Feats can award a tab of achievements for each one and Chronicle Stats can keep their records. The mods also detect each other while running and only add shared features while a sibling is loaded, such as Coinage balances behind Dominion faction banks, Dominion faction threads in SocialBridge, and RestAPI route groups for eight other mods.',
+      'The largest mods are Dominion Factions, with 209 commands and 259 settings, and Coinage, with 157 commands over one ledger for payments, banks, shops, an auction house, and trading. Atlas serves a live web map straight from the server, with terrain, markers, a timeline of every world, and 3D views. Feats ships 455 achievements on a plain server and up to 719 with every pack and sibling mod. Across the suite there are more than 600 commands and 1,000 settings, and the wiki documents every one of them for the thirteen mods it covers.',
+      'The documentation lives at mods.ryvrook.com, an Astro Starlight site written from each repository\'s source rather than its README. Every mod has pages for commands, permissions, settings, APIs, integrations, and its changelog. A separate server section explains the mods to players on my own server, with 105 pages of guides that also cover the third-party mods running there.',
+      'Schematic Blueprints, started on 2026-10-19 and now on CurseForge, saves builds or loads any prefab as a hologram, then lets a player in Adventure mode build it from their own inventory with a printer, easy place, a verifier, and a material list. ItemForge turns any held item into a custom item with its own name, stats, durability, and perks, and StackSize changes how many of an item fit in one slot. Polyglot, a chat translator, is documented and waiting on its first client test before it goes to CurseForge.',
     ],
     diagram: `                    hytale server 0.7.2
                             |
                             | engine hooks, registered once
                             v
 +------------------------------------------------------------------+
-| TRACKERAPI     62 typed event kinds · per-player counters ·      |
-|                hourly journal · read by seven sibling mods       |
+| TRACKERAPI     77 typed event kinds · per-player counters ·      |
+|                hourly journal · bindings for fourteen mods by    |
+|                other authors · read by seven sibling mods        |
 +------------------------------------------------------------------+
         |              |              |              |
         v              v              v              v
  +------------+ +------------+ +------------+ +--------------+
  | feats      | | chronicle  | | atlas      | | dominion     |
- | 455        | | stats      | | live web   | | factions     |
- | achieve-   | | pages and  | | map, 3D,   | | claims,      |
- | ments      | | dashboard  | | timeline   | | sieges, bank |
+ | 455 feats, | | stats      | | live web   | | factions     |
+ | 719 with   | | pages, web | | map, 3D,   | | claims,      |
+ | every mod  | | dashboard  | | timeline   | | sieges, bank |
  +------------+ +------------+ +------------+ +--------------+
         |              |              |              |
         +--------------+------+-------+--------------+
@@ -104,32 +105,33 @@ export const projects: Project[] = [
  | shops, bank  | | linking, roster| | dashboard, 144 routes  |
  +--------------+ +----------------+ +------------------------+
 
- standalone: lullaby · keepworkbenchtier · workbench chest link ·
-             polyglot
+ standalone: schematic blueprints · lullaby · keepworkbenchtier ·
+             workbench chest link · itemforge · stacksize · polyglot
 
- docs: mods.ryvrook.com, astro starlight, one section per mod`,
-    modsCountedAt: '2026-10-19',
+ docs: mods.ryvrook.com, astro starlight, one section per mod,
+       plus a server section with 105 pages of player guides`,
+    modsCountedAt: '2026-10-25',
     mods: [
       {
         name: 'Feats',
         icon: '/projects/hytale/feats.png',
-        version: '1.8.0',
+        version: '1.10.0',
         group: 'Gameplay',
-        summary: '455 achievements in eleven tabs, up to 528 with packs and sibling mods, with unlock toasts, a banner, a browser, and a points leaderboard.',
+        summary: '455 achievements in eleven tabs, up to 719 across 29 tabs with packs and other mods, with unlock toasts, a banner, a browser, and a points leaderboard.',
         wiki: 'https://mods.ryvrook.com/feats/',
         curseforge: 'https://www.curseforge.com/hytale/mods/feats',
-        downloads: 62,
+        downloads: 79,
         repo: 'https://github.com/ryvrook/feats',
       },
       {
         name: 'Chronicle Stats',
         icon: '/projects/hytale/chronicle-stats.png',
-        version: '1.5.0',
+        version: '1.6.1',
         group: 'Gameplay',
-        summary: 'Per-player, per-world, and per-day statistics, with in-game pages and a self-served web dashboard.',
+        summary: 'Per-player, per-world, and per-day statistics, with in-game pages, a self-served web dashboard, and records for fourteen other mods.',
         wiki: 'https://mods.ryvrook.com/chronicle-stats/',
         curseforge: 'https://www.curseforge.com/hytale/mods/chronicle-stats',
-        downloads: 32,
+        downloads: 37,
       },
       {
         name: 'Atlas',
@@ -139,7 +141,7 @@ export const projects: Project[] = [
         summary: 'Live web map served from the server with terrain, players, markers, a timeline of every world, 3D views, and a Java API with marker events.',
         wiki: 'https://mods.ryvrook.com/atlas/',
         curseforge: 'https://www.curseforge.com/hytale/mods/atlas',
-        downloads: 30,
+        downloads: 83,
         repo: 'https://github.com/ryvrook/atlas',
       },
       {
@@ -150,7 +152,7 @@ export const projects: Project[] = [
         summary: 'Economy plugin with one ledger behind payments, banknotes, banks, shops, an auction house, trading, a casino, and rewards.',
         wiki: 'https://mods.ryvrook.com/coinage/',
         curseforge: 'https://www.curseforge.com/hytale/mods/coinage',
-        downloads: 21,
+        downloads: 26,
       },
       {
         name: 'Dominion Factions',
@@ -160,8 +162,18 @@ export const projects: Project[] = [
         summary: 'Factions with power-based claims, ranks, allies and nations, sieges, a bank and market, events, clan tags, and an API for other mods.',
         wiki: 'https://mods.ryvrook.com/dominion/',
         curseforge: 'https://www.curseforge.com/hytale/mods/dominion-factions',
-        downloads: 25,
+        downloads: 32,
         repo: 'https://github.com/ryvrook/dominion-factions',
+      },
+      {
+        name: 'Schematic Blueprints',
+        icon: '/projects/hytale/schematic-blueprints.png',
+        version: '0.1.10',
+        group: 'Gameplay',
+        summary: 'Saves builds as prefabs or loads any prefab as a hologram, then lets an Adventure mode player build it from their own inventory with a printer, easy place, a verifier, and a material list.',
+        wiki: 'https://mods.ryvrook.com/schematic-blueprints/',
+        curseforge: 'https://www.curseforge.com/hytale/mods/schematic-blueprints',
+        downloads: 53,
       },
       {
         name: 'Lullaby',
@@ -171,18 +183,18 @@ export const projects: Project[] = [
         summary: 'Ends the night when a share or fixed number of players sleep, leaving AFK, Creative, and spectating players out of the count.',
         wiki: 'https://mods.ryvrook.com/lullaby/',
         curseforge: 'https://www.curseforge.com/hytale/mods/lullaby',
-        downloads: 75,
+        downloads: 93,
         repo: 'https://github.com/ryvrook/lullaby',
       },
       {
         name: 'Keep Workbench Tier',
         icon: '/projects/hytale/keepworkbenchtier.png',
-        version: '1.0.2',
+        version: '1.1.0',
         group: 'Gameplay',
-        summary: 'An upgraded crafting bench drops as an item of its tier when broken, and placing that item gives the bench back at that tier.',
+        summary: 'An upgraded crafting bench drops as an item of its tier when broken, and placing that item gives the bench back at that tier, including benches from other mods.',
         wiki: 'https://mods.ryvrook.com/keepworkbenchtier/',
         curseforge: 'https://www.curseforge.com/hytale/mods/kwt',
-        downloads: 153,
+        downloads: 214,
       },
       {
         name: 'Workbench Chest Link',
@@ -192,7 +204,23 @@ export const projects: Project[] = [
         summary: 'Links a crafting bench to the owner\'s registered chests and named stashes anywhere in the world, past the vanilla 14-block search.',
         wiki: 'https://mods.ryvrook.com/workbenchchestlink/',
         curseforge: 'https://www.curseforge.com/hytale/mods/workbench-chest-link',
-        downloads: 7,
+        downloads: 12,
+      },
+      {
+        name: 'ItemForge',
+        icon: '/projects/hytale/itemforge.svg',
+        version: '1.2.0',
+        group: 'Gameplay',
+        summary: 'Turns any held item into a custom item with its own id, name, description, damage, quality, durability, and ten kinds of perk, handed out with /give and kept across restarts.',
+        note: 'not on CurseForge yet',
+      },
+      {
+        name: 'StackSize',
+        icon: '/projects/hytale/stacksize.svg',
+        version: '1.0.0',
+        group: 'Gameplay',
+        summary: 'Changes how many of an item type fit in one inventory slot for everyone on the server at once, saved across restarts, with a reset back to the original.',
+        note: 'not on CurseForge yet',
       },
       {
         name: 'SocialBridge',
@@ -202,17 +230,17 @@ export const projects: Project[] = [
         summary: 'Discord chat relay, account linking, roster, and faction threads, with its own bot login or a bridge to a bot you already run.',
         wiki: 'https://mods.ryvrook.com/socialbridge/',
         curseforge: 'https://www.curseforge.com/hytale/mods/socialbridge',
-        downloads: 2,
+        downloads: 12,
       },
       {
         name: 'RestAPI',
         icon: '/projects/hytale/restapi.png',
-        version: '0.3.0',
+        version: '0.3.2',
         group: 'Server tools',
         summary: 'HTTP API, RCON, and an admin dashboard with scoped keys, an audit log, OpenAPI docs, and route groups for eight sibling mods.',
         wiki: 'https://mods.ryvrook.com/restapi/',
         curseforge: 'https://www.curseforge.com/hytale/mods/restapi',
-        downloads: 13,
+        downloads: 25,
         repo: 'https://github.com/ryvrook/Hytale-RestAPI',
       },
       {
@@ -227,16 +255,25 @@ export const projects: Project[] = [
       {
         name: 'TrackerAPI',
         icon: '/projects/hytale/trackerapi.png',
-        version: '1.1.1',
+        version: '1.3.0',
         group: 'Libraries',
-        summary: 'Shared library that publishes 62 typed event kinds, per-player counters, and an hourly journal to other plugins.',
+        summary: 'Shared library that publishes 77 typed event kinds, per-player counters, an hourly journal, and bindings for fourteen other mods to sibling plugins.',
         wiki: 'https://mods.ryvrook.com/trackerapi/',
         curseforge: 'https://www.curseforge.com/hytale/mods/trackerapi',
-        downloads: 25,
+        downloads: 28,
         repo: 'https://github.com/ryvrook/trackerapi',
       },
     ],
     changelog: [
+      { date: '2026-10-25', message: 'built ItemForge through 1.2.0, custom items with their own stats and perks' },
+      { date: '2026-10-24', message: 'Schematic Blueprints 0.1.10 fires the vanilla place event so skill mods count printed blocks' },
+      { date: '2026-10-23', message: 'Feats 1.10.0 and TrackerAPI 1.3.0 added tabs and bindings for fourteen mods by other authors' },
+      { date: '2026-10-23', message: 'Chronicle Stats 1.6.1 added a Mods tab, dashboard page, and records for those mods' },
+      { date: '2026-10-23', message: 'Keep Workbench Tier 1.1.0 keeps the tier of benches from other mods' },
+      { date: '2026-10-22', message: 'added a block picker to the Schematic Blueprints materials page in 0.1.8, the build on CurseForge' },
+      { date: '2026-10-21', message: 'StackSize 1.0.0, per-item stack limits that survive restarts' },
+      { date: '2026-10-20', message: 'RestAPI 0.3.2 fixed the dashboard login link from another site' },
+      { date: '2026-10-19', message: 'Feats 1.8.1, TrackerAPI 1.1.2, and Chronicle Stats 1.5.1 stopped counting chest swaps as items gained' },
       { date: '2026-10-19', message: 'published Workbench Chest Link 1.0.0 and started Schematic Blueprints' },
       { date: '2026-10-18', message: 'served the RestAPI admin dashboard from the mod in 0.3.0' },
       { date: '2026-10-18', message: 'moved every Feats string into Hytale\'s lang files in 1.8.0 and documented Polyglot 0.1.0' },
@@ -251,11 +288,57 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: 'apollo-coffee',
+    name: 'Apollo Coffee',
+    status: 'ACTIVE',
+    tags: ['AI Assist'],
+    lang: 'HTML / JavaScript',
+    updated: '2026-10-21',
+    complexity: 2,
+    pinned: false,
+    image: '/projects/apollo-coffee-logo.svg',
+    summary:
+      'Static site for a coffee trailer in New Albany, Ohio, with a menu, visit and about pages, reviews, FAQ, a generated blog, and a daily Google rating refresh.',
+    body: [
+      'Apollo Coffee is a coffee trailer parked in a nursery lot in New Albany, Ohio. The site is plain HTML with one stylesheet, one small script, and self-hosted subset fonts, so every page loads in one round trip and scores well on the mobile metrics that matter for a business people find on their phone.',
+      'A Node build script renders the blog from markdown, writes the RSS feed and sitemap, and stamps the Google rating and review count into the pages. A GitHub Actions job pulls the rating from the Places API every day and commits the change, so the number on the site stays current without anyone touching it.',
+      'The logo was redrawn as an SVG to match the sign on the trailer. Photos are graded to one look and served in four sizes, and the map only loads when it scrolls into view. The site is built for Cloudflare Pages or Netlify and waits on the domain going live.',
+    ],
+    changelog: [
+      { date: '2026-10-21', message: 'daily Google rating and review refresh from the Places API, scroll-loaded map, photo call to action band' },
+      { date: '2026-10-20', message: 'added reviews, FAQ, contact, and blog pages with RSS, a mobile layout, graded photos, and self-hosted fonts' },
+      { date: '2026-10-19', message: 'built the site with home, menu, visit, and about pages, the redrawn logo, sitemap, robots, and llms.txt' },
+    ],
+  },
+  {
+    slug: 'mckay-used-books',
+    name: 'McKay Used Books',
+    status: 'ACTIVE',
+    tags: ['AI Assist'],
+    lang: 'JavaScript',
+    updated: '2026-10-24',
+    complexity: 3,
+    pinned: false,
+    image: '/projects/mckay-logo.png',
+    summary:
+      'Static rebuild of a used bookstore\'s WordPress site on Cloudflare Workers, keeping the old URLs, with an owner admin for hours, closures, banners, and a form inbox.',
+    body: [
+      'McKay Used Books is a bookstore in Manassas, Virginia whose site ran on WordPress. This rebuild keeps every old URL and generates the whole site from one dependency-free Node script, with holiday hours, events, and structured data stamped in at build time and a daily rebuild action so the hours never go stale.',
+      'The design is built around the store sign, with a wide Archivo typeface, the sign\'s blue, and an aisle directory on the home page. A Cloudflare Worker serves the static output and an owner admin at /admin/ for closures, banners, pop-ups, analytics IDs, and the inbox for the contact forms, so the owner never needs a CMS.',
+      'A demo build mode produces a private preview with noindex headers and the forms turned off, and a handover guide walks the owner through deploying to their own Cloudflare account with one button.',
+    ],
+    changelog: [
+      { date: '2026-10-24', message: 'added the Workers admin with owner settings and a form inbox, plus a demo build mode' },
+      { date: '2026-10-22', message: 'redesigned around the store sign with Archivo wide type, sign blue, and an aisle directory' },
+      { date: '2026-10-22', message: 'static rebuild of the WordPress site with the old URLs preserved and a daily rebuild action' },
+    ],
+  },
+  {
     slug: 'eternal-love',
     name: 'Eternal Love',
     status: 'ACTIVE',
     lang: 'TypeScript',
-    updated: '2026-10-07',
+    updated: '2026-10-24',
     complexity: 4,
     pinned: false,
     image: '/projects/eternal-love-logo.svg',
@@ -266,7 +349,35 @@ export const projects: Project[] = [
       'Customer reviews use individual request tokens and an approval step before publication. Reference images and customer photos stay private, with metadata stripped from uploads. Occasions, products, navigation, and editorial pages are managed through the same CMS.',
       'The Docker stack runs on Dokploy behind Cloudflare, with scheduled jobs, readiness checks, and backups to R2. The storefront and operating workflows are built; the repository still tracks launch work around production accounts, payments, and final content.',
     ],
+    diagram: `  browser
+    |
+    v
++------------------------------+
+| cloudflare tunnel            |
+| turnstile on public forms    |
++--------------|---------------+
+               v
++------------------------------------------------------------------+
+| web   one next.js 16 process                                     |
+|                                                                  |
+|   /          storefront, gallery, shop, compare, blog            |
+|   /admin     payload cms 3: products, pages, orders, media,      |
+|              reviews, custom requests                            |
+|   /api       payload rest · stripe webhook · jobs runner         |
++-----|---------------------|---------------------|----------------+
+      v                     v                     v
++----------------+  +------------------+  +----------------------+
+| postgres 17    |  | media volumes    |  | stripe checkout,     |
+| catalog, orders|  | 48 photos, nine  |  | resend mail, gtm     |
+| content        |  | 360 videos       |  | and ga4              |
++----------------+  +------------------+  +----------------------+
+
+ sidecars: cron curls the jobs runner every 15 minutes; backup
+           runs pg_dump nightly and copies dumps and media to r2
+ deploy:   dokploy compose, four services, no exposed port`,
     changelog: [
+      { date: '2026-10-24', message: 'imported the real catalog, 48 photos and nine 360 videos, with media usage tracking in the CMS' },
+      { date: '2026-10-24', message: 'rebuilt the home, gallery, shop, and compare pages from CMS globals and renamed the journal to blog with redirects' },
       { date: '2026-10-07', message: 'added Google Tag Manager from the CMS, GA4 ecommerce events, and Search Console verification' },
       { date: '2026-10-07', message: 'hardened public endpoints, checkout limits, authentication cookies, and media uploads' },
       { date: '2026-10-06', message: 'connected CMS navigation and product images and configured the shared deployment network' },
@@ -291,6 +402,36 @@ export const projects: Project[] = [
       'The tag-pack shop uses Stripe webhooks to turn paid checkouts into orders, with pack assignment and shipping handled by the admin. Account tools include passkeys, recovery codes, Google and Apple sign-in, exports, user blocking, and moderation controls. The repository records deployment rehearsals and App Store preparation; the app\'s eligibility is 16 and over.',
       'In October I added an admin command center with an audit log, a reports inbox, bans and timed suspensions, and Stripe refunds. Any duck can now start with a free printable paper tag, and the store lists sticker tag packs as coming soon. An admin encode station writes official packs onto blank chip stickers and prints round QR labels and pack cards for each batch. Public posts appear as postcards inside a duck\'s passport chapters, and the public pages gained drawn share images, structured data, numbered sitemaps, an RSS feed, and analytics behind a consent banner.',
     ],
+    diagram: `  browser                        mobile app (expo, react native)
+    |                                      |
+    v                                      |
++-----------------------------+            |
+| web   next.js 16, a server- |            |
+|       only client that      |            |
+|       signs with an         |            |
+|       internal key          |            |
++-------------|---------------+            |
+              |                            |
+              v                            v
++------------------------------------------------------------------+
+| api   one go binary, net/http, three commands                    |
+|                                                                  |
+|   serve    rest at /v1, passkeys, apple and google sign-in,      |
+|            stripe checkout for tag packs                         |
+|   worker   drains the outbox: apns and fcm pushes, resend        |
+|            mail, periodic jobs                                   |
+|   migrate  schema on deploy                                      |
++---------|----------------------------|---------------------------+
+          |                            |
+          v                            v
++------------------------+   +------------------------------+
+| postgres 16            |   | private photo bucket         |
+| ducks, journeys, tags, |   | minio locally, r2 or s3      |
+| outbox rows            |   | in production                |
++------------------------+   +------------------------------+
+
+ deploy: one compose stack under dokploy, distroless go and
+         node images, cloudflare tunnel in front`,
     changelog: [
       { date: '2026-10-11', message: 'built numbered sitemap files and dated the Terms on web and mobile' },
       { date: '2026-10-10', message: 'added free printable paper tags and an encode station for sticker tag packs' },
@@ -323,6 +464,33 @@ export const projects: Project[] = [
       'Print is a first-class output rather than a stylesheet. The builder assembles any level, track, or custom selection into an A4 or Letter PDF with embedded fonts, a document outline, and PDF/UA tagging. Each printed lesson carries a QR code pinned to its exact revision, so a reader can scan the page to review online or record the study session, and a newer revision is offered without replacing the one they printed. The three canonical level books run to about 5,500 pages across both paper sizes, and tall code listings continue across pages instead of being compressed to fit.',
       'The site is deployed behind a Cloudflare Tunnel with optional Clerk sign-in. The print builder now offers note pages, writing-space and type-size controls, reading aids, flashcards, and study schedules, with stage-by-stage build progress. The official documentation catalogue includes 27 licensed manuals. Digital verification is recorded in the repository; physical print, scan, and reader trials remain separate release work.',
     ],
+    diagram: `  browser
+    |
+    v
++------------------------------------------------------------------+
+| web   next.js 16 app router · clerk or local sign-in ·           |
+|       server components call the api inside the network,        |
+|       client code hits /api/* which next rewrites                |
++--------------|---------------------------------------------------+
+               v
++------------------------------------------------------------------+
+| b2p   one go binary, net/http, goose migrations                  |
+|                                                                  |
+|   api      books, tracks, collections, discussions, exports      |
+|   worker   claims jobs from postgres (skip locked), builds       |
+|            book and print pdfs with a bundled typst              |
+|   ops      migrate · seed · books · content · backup             |
++----------|----------------------------------|--------------------+
+           v                                  v
++------------------------+       +-----------------------------+
+| postgres 17            |       | storage volume              |
+| content, revisions,    |       | built pdfs and uploads,     |
+| users, the job queue   |       | qr links pinned to a        |
+|                        |       | revision                    |
++------------------------+       +-----------------------------+
+
+ deploy: compose with caddy, or a dokploy stack behind a cloudflare
+         tunnel; images published to ghcr on tags`,
     changelog: [
       { date: '2026-09-15', message: 'added profile pictures and rebuilt the site layouts for phones' },
       { date: '2026-09-14', message: 'deployed with Clerk sign-in and rebuilt the books against the public origin' },
@@ -355,6 +523,30 @@ export const projects: Project[] = [
       'A packaged desktop application manages its local services and guides setup for model commands and local speech transcription. Live sessions connect conversation with automatic board capture and interpretation. Phone capture pairs through a browser, with recovery for stalled camera previews and stale pairings.',
       'Optional sync transfers selected workspaces between the desktop and hosted workspace. Production phone pairing and sync have recorded acceptance checks, alongside installed macOS and Debian workflows. The project remains an experimental private preview; Windows installer diagnostics and broader user trials are separate from those verified paths.',
     ],
+    diagram: `  browser        ios capture app (swiftui)       desktop (electron)
+    |                     |                              |
+    +----------+----------+                              |
+               v                                        v
++------------------------------+          +-------------------------+
+| gateway   caddy, one origin  |          | local host :3210        |
+|           /api /oauth /mcp   |          | the same api and web,   |
+|           to the api, the    |          | spawned on the machine  |
+|           rest to web        |          +-------------------------+
++------|---------------|-------+
+       v               v
++----------------+ +---------------------------------------------+
+| web            | | api   bun, http and sse, better-auth,       |
+| react 19 on    | |       mcp server for assistant clients      |
+| vinext         | +--------|-------------------|----------------+
++----------------+          v                   v
+                   +----------------+  +------------------------+
+                   | sqlite         |  | local adapters         |
+                   | sessions,      |  | codex or claude cli,   |
+                   | drafts, pairs  |  | whisper.cpp speech     |
+                   +----------------+  +------------------------+
+
+ deploy: dokploy compose at presentelle.ryvrook.com; ios through
+         eas, desktop installers unsigned`,
     changelog: [
       { date: '2026-09-09', message: 'verified production phone pairing and selected workspace sync' },
       { date: '2026-09-08', message: 'packaged the desktop workspace with local speech setup and managed services' },
@@ -817,7 +1009,7 @@ export const projects: Project[] = [
     name: 'roadrunner',
     status: 'STABLE',
     lang: 'JavaScript',
-    updated: '2026-09-14',
+    updated: '2026-10-22',
     complexity: 3,
     pinned: true,
     pinnedOrder: 2,
@@ -835,7 +1027,36 @@ export const projects: Project[] = [
       'Three containers: Postgres 16, an Express API with JWT auth that runs its own migrations on boot, and nginx serving the React SPA. An Expo mobile app talks to the same API. The stack refuses to start without a real JWT secret. There is no insecure default.',
       'Reminders show overdue dates or mileage and export to your calendar. The mobile app now covers the web feature set, including personal parts lists and community guides, with controls for hiding guides and blocking authors. Recent work added store screenshots from a seeded demo garage and tablet layout fixes. The iOS app is live on the App Store, and Android users can install the APK from the site.',
     ],
+    diagram: `  browser                           roadrunnerlog mobile (expo)
+    |                                      |
+    v                                      |
++------------------------------+           |
+| cloudflare   tls, optional   |<----------+
+|              tunnel          |
++--------------|---------------+
+               v
++------------------------------+
+| nginx   serves the react /   |
+|         vite spa, proxies    |
+|         /api/* to the api    |
++--------------|---------------+
+               v
++------------------------------------------------------------------+
+| api   node 22, express, runs its own migrations at startup       |
+|       jwt sessions · google, apple, facebook sign-in ·           |
+|       photo uploads with sharp · vin decoding via nhtsa vpic     |
++----------|-------------------------------|-----------------------+
+           v                               v
++------------------------+     +----------------------------+
+| postgres 16            |     | uploads volume             |
+| garages, vehicles,     |     | photos and parts images    |
+| maintenance, reminders |     |                            |
++------------------------+     +----------------------------+
+
+ deploy: docker compose on a vps, three containers; mobile through
+         eas build to the app store and a direct apk download`,
     changelog: [
+      { date: '2026-10-22', message: 'moved the API and web images to Node 22' },
       { date: '2026-09-14', message: 'added App Store and direct Android download links to the landing page' },
       { date: '2026-09-10', message: 'built a seeded demo garage and simulator capture flow for store screenshots' },
       { date: '2026-09-05', message: 'polished mobile parts lists, photo uploads, and request recovery for iOS release preparation' },
@@ -949,7 +1170,7 @@ export const projects: Project[] = [
     name: 'Ryv personal site',
     status: 'ACTIVE',
     lang: 'TypeScript',
-    updated: '2026-09-06',
+    updated: '2026-10-25',
     complexity: 1,
     pinned: false,
     repo: 'https://github.com/ryvrook/ryv-site',
@@ -961,6 +1182,8 @@ export const projects: Project[] = [
       'It grew up in my old portfolio repo through a heavier "personal OS" concept before this design replaced it with a single column and fewer ideas. Now it lives in its own repo, which is where the old one felt it deserved to end up.',
     ],
     changelog: [
+      { date: '2026-10-25', message: 'added Schematic Blueprints, ItemForge, and StackSize, architecture diagrams for five projects, and two client sites' },
+      { date: '2026-10-19', message: 'added the Hytale mods catalog entry with a mod list, icons, and a banner' },
       { date: '2026-09-06', message: 'refreshed Now, Recent, and project entries from recent development history' },
       { date: '2026-08-07', message: 'added collapsible architecture diagrams to five project pages' },
       { date: '2026-08-06', message: 'published a post on how Direct Flock runs the flock' },

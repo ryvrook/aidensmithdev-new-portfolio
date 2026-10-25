@@ -63,9 +63,11 @@ export function ModList({ mods, countedAt }: { mods: Mod[]; countedAt?: string }
                     {mod.summary}
                   </p>
                   <div className="mt-[6px] flex flex-wrap gap-x-4 gap-y-1 text-xs">
-                    <a href={mod.wiki} target="_blank" rel="noreferrer">
-                      wiki
-                    </a>
+                    {mod.wiki && (
+                      <a href={mod.wiki} target="_blank" rel="noreferrer">
+                        wiki
+                      </a>
+                    )}
                     {mod.curseforge && (
                       <a href={mod.curseforge} target="_blank" rel="noreferrer">
                         curseforge

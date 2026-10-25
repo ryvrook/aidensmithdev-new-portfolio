@@ -7,7 +7,7 @@ import { statusColor } from '@/lib/format';
 
 const selections = [
   { slug: 'roadrunner', focus: 'Web + mobile', description: 'A motorcycle ownership platform bringing maintenance, parts, guides, and a rider community into one place.', detail: 'Ownership records, community tools, and an iOS app on the App Store.' },
-  { slug: 'hytale-mods', focus: 'Game mods', description: 'Twelve Hytale server mods built on a shared event library, with a wiki that documents every command and setting.', detail: 'Java. Eleven on CurseForge with 445 downloads, docs at mods.ryvrook.com.' },
+  { slug: 'hytale-mods', focus: 'Game mods', description: 'Fifteen Hytale server mods built on a shared event library, with a wiki that documents every command and setting.', detail: 'Java. Twelve on CurseForge with 694 downloads, docs at mods.ryvrook.com.' },
   { slug: 'enterprise-vectordns', focus: 'Infrastructure', description: 'Domain monitoring built to distinguish real DNS, certificate, and WHOIS changes from noise.', detail: 'Go services, monitoring history, and account workflows.' },
   { slug: 'corvid-platform', focus: 'Connected products', description: 'One operator workspace connecting business discovery, website audits, leads, and site production.', detail: 'Shared workflows across independently running products.' },
   { slug: 'flock-directories', focus: 'Publishing systems', description: 'A shared template for independent local business directories, each built from validated, sourced data.', detail: 'One data model, reviewed listings, and a static site per domain.' },
