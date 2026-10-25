@@ -1,10 +1,10 @@
-// `bun run activity` prints numbers to paste here for easy updates.
+// Hand-tuned share. `bun run activity` prints the raw GitHub numbers for reference.
 
 export const languages: { name: string; percent: number }[] = [
-  { name: 'TypeScript', percent: 40.1 },
-  { name: 'Java', percent: 25.7 },
-  { name: 'Go', percent: 22.4 },
-  { name: 'JavaScript', percent: 4.6 },
-  { name: 'HTML', percent: 2.4 },
-  { name: 'CSS', percent: 1.7 },
+  { name: 'TypeScript', percent: 30.0 },
+  { name: 'Java', percent: 20.0 },
+  { name: 'HTML', percent: 16.0 },
+  { name: 'CSS', percent: 14.0 },
+  { name: 'Go', percent: 12.0 },
+  { name: 'JavaScript', percent: 8.0 },
 ];
